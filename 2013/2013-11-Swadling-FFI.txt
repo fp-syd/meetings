@@ -1,0 +1,330 @@
+
+
+ ______________________________________ 
+/ Please view me in GHC. Download from \
+\ github.com/maxpow4h/fp-syd-2013      /
+ -------------------------------------- 
+     \
+      \
+       ("`-'  '-/") .___..--' ' "`-._
+         ` *_ *  )    `-.   (      ) .`-.__. `)
+         (_Y_.) ' ._   )   `._` ;  `` -. .-'
+      _.. `--'_..-_/   /--' _ .' ,4
+   ( i l ),-''  ( l i),'  ( ( ! .-'    
+
+
+
+
+
+  ┌──────────────┐ ────── Embeddable Foreign Language Interface Generators ───────    
+  │0             │                                                                    
+  │1             │                                                                    
+  │2             │        Embeddable Foreign Language Interface Generators            
+  │3             │                                                                    
+  │4             │                                                                    
+  │5             │                        Maxwell Swadling                            
+  │6             │                                                                    
+  │7             │                                                                    
+  │8             │                                                                    
+  │9             │                                                                    
+  │10            │                                                                    
+  │11            │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │     FP-Syd Nov 2013                                                
+  │              │                                                                    
+  └──────────────┘                                                                    
+  ──────────────────────────────── Speaker Notes ─────────────────────────────────    
+  Empty string.                                                                       
+                                                                                      
+                                                                                      
+                                                                                      
+                                                                                      
+  ┌──────────────┐ ─────────────────────────── Problem ───────────────────────────    
+  │0             │                                                                    
+  │1             │ - I have a Haskell library               (the Elm compiler)        
+  │2             │ - I want to use it with some C code      (a GUI)                   
+  │3             │                                                                    
+  │4             │                                                                    
+  │5             │                                                                    
+  │6             │                                                                    
+  │7             │                                                                    
+  │8             │                                                                    
+  │9             │                                                                    
+  │10            │                                                                    
+  │11            │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  └──────────────┘                                                                    
+  ──────────────────────────────── Speaker Notes ─────────────────────────────────    
+  So what's wrong? Pick your favourite Haskell library. I.e. the Elm compiler. We     
+  want to use it in a C program, such as a GUI.                                       
+                                                                                      
+                                                                                      
+                                                                                      
+  ┌──────────────┐ ───────────────────────────── FFI ─────────────────────────────    
+  │0             │                                                                    
+  │1             │ = C Code =                                                         
+  │2             │ char docDir[128], filen[128];                                      
+  │3             │ int res = compileFile(docDir, filen);                              
+  │4             │                                                                    
+  │5             │ = Haskell Code =                                                   
+  │6             │ foreign export ccall compileFile :: CString                        
+  │7             │                                  -> CString                        
+  │8             │                                  -> IO CInt                        
+  │9             │                                                                    
+  │10            │ compileFile :: CString -> CString -> IO CInt                       
+  │11            │ compileFile freeDir fname = do                                     
+  │              │   fname'   <- peekCString fname                                    
+  │              │   freeDir' <- peekCString freeDir                                  
+  │              │   build freeDir' fname'                                            
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  └──────────────┘                                                                    
+  ──────────────────────────────── Speaker Notes ─────────────────────────────────    
+  Lets look at how we write an FFI to do this. We define and export this function.    
+  We pack some marshalling in (green). This is function we want to call (magenta).    
+  The only bits we care about are the arguments and which function to use. We         
+  don't care about the rest. We want to automate this away.                           
+                                                                                      
+  ┌──────────────┐ ──────────────────────────── cpppp ────────────────────────────    
+  │0             │                                                                    
+  │1             │ = C Code =                                                         
+  │2             │ char docDir[128], filen[128];                                      
+  │3             │ int res = @|c_hs|"build %s %s"|docDir, filen|;                     
+  │4             │                                                                    
+  │5             │                                                                    
+  │6             │                                                                    
+  │7             │                                                                    
+  │8             │                                                                    
+  │9             │                                                                    
+  │10            │                                                                    
+  │11            │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  └──────────────┘                                                                    
+  ──────────────────────────────── Speaker Notes ─────────────────────────────────    
+  What happens when I want to use a new function? More work.                          
+  Instead. I want this quasi quoter like thing in C.                                  
+  Except we don't need anti quoting.                                                  
+                                                                                      
+                                                                                      
+  ┌──────────────┐ ───────────────────── Quoted Initialiser ──────────────────────    
+  │0             │                                                                    
+  │1             │ return type      quoted string   arguments                         
+  │2             │ ∨                ∨               ∨                                 
+  │3             │ int res = @|c_hs|"build %s %s"|docDir, filen|;                     
+  │4             │             ∧              ∧                                       
+  │5             │             transformer    types                                   
+  │6             │                                                                    
+  │7             │                                                                    
+  │8             │ 1. can not modify the AST outside of it                            
+  │9             │ 2. the return type defined                                         
+  │10            │ 3. all arguments evaluated trivially                               
+  │11            │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  └──────────────┘                                                                    
+  ──────────────────────────────── Speaker Notes ─────────────────────────────────    
+  Unlike macros, these can write other files. The position matches up to              
+  initialisers in C.                                                                  
+                                                                                      
+                                                                                      
+                                                                                      
+  ┌──────────────┐ ───────────────────── Quoted Initialiser ──────────────────────    
+  │0             │                                                                    
+  │1             │ Need to add this to C                                              
+  │2             │                                                                    
+  │3             │ int res = @|c_hs|"build %s %s"|docDir, filen|;                     
+  │4             │                                                                    
+  │5             │ data Initializer = ExpInitializer Exp !SrcLoc                      
+  │6             │                  | QuotedInitializer Id String [Id] !SrcLoc        
+  │7             │                  | CompoundInitializer ...                         
+  │8             │                                                                    
+  │9             │                                                                    
+  │10            │                                                                    
+  │11            │ - quoter_name         |  Id                                        
+  │              │ - quoter_expression   |  String                                    
+  │              │ - quoter_args         |  [Id]                                      
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  └──────────────┘                                                                    
+  ──────────────────────────────── Speaker Notes ─────────────────────────────────    
+  A new kind of C Initialiser. QQ can do lots of things, we want to limit to only     
+  some, simpler.                                                                      
+                                                                                      
+                                                                                      
+                                                                                      
+  ┌──────────────┐ ───────────────────────── Transforms ──────────────────────────    
+  │0             │                                                                    
+  │1             │ data Transform = forall a . Transform                              
+  │2             │   { _init :: IO a                                                  
+  │3             │   , _trns :: a -> String -> [Id] -> SrcLoc                         
+  │4             │           -> IO (a, Initializer)                                   
+  │5             │   , _fin  :: a -> IO ()                                            
+  │6             │   }                                                                
+  │7             │                                                                    
+  │8             │ - we can do IO                                                     
+  │9             │ - we can pass around some state                                    
+  │10            │                                                                    
+  │11            │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  └──────────────┘                                                                    
+  ──────────────────────────────── Speaker Notes ─────────────────────────────────    
+  Define transforms. We get IO, a carried state, an initialise and finalise.          
+                                                                                      
+                                                                                      
+                                                                                      
+                                                                                      
+  ┌──────────────┐ ────────────────── Example Int4 Transformer ───────────────────    
+  │0             │                                                                    
+  │1             │ When we write:                                                     
+  │2             │                                                                    
+  │3             │     int x = @|int4|""||;                                           
+  │4             │                                                                    
+  │5             │ We want it to compile to:                                          
+  │6             │                                                                    
+  │7             │     int x = 4;                                                     
+  │8             │                                                                    
+  │9             │ mkInt4 :: (IO (),                                                  
+  │10            │       () -> String -> [Id] -> SrcLoc -> IO ((), Initializer),      
+  │11            │       () -> IO ())                                                 
+  │              │ mkInt4 = (return (), mkInt4', const . return $ ())                 
+  │              │                                                                    
+  │              │ mkInt4' :: () -> String -> [Id] -> SrcLoc                          
+  │              │         -> IO ((), Initializer)                                    
+  │              │ mkInt4' _ expression vars l = return ((), [cinit|4|])              
+  │              │                                            ∧ language-c-quote      
+  └──────────────┘       (ExpInitializer (Const (IntConst "4" Signed 4 l) l) l)       
+  ──────────────────────────────── Speaker Notes ─────────────────────────────────    
+  A simple example, producing the integer constant 4. Regardless of quoter string     
+  or arguments.                                                                       
+                                                                                      
+                                                                                      
+                                                                                      
+  ┌──────────────┐ ────────────────────── c_hs Transformer ───────────────────────    
+  │0             │                                                                    
+  │1             │ initHs = do                                                        
+  │2             │   h <- openFile "HSAux.hs" WriteMode                               
+  │3             │   hPutStrLn h "module HSAux where\n"                               
+  │4             │   return h                                                         
+  │5             │                                                                    
+  │6             │ closeHs = hClose                                                   
+  │7             │                                                                    
+  │8             │ emit :: (FormatString a) => Handle -> SrcLoc -> FCall a            
+  │9             │      -> IO (Handle, C.Initializer)                                 
+  │10            │ emit h loc (FCall fname ffi_name args) = do                        
+  │11            │     let carg_list = map snd args                                   
+  │              │         cexpr = C.FnCall (C.Var (C.Id ffi_name loc) loc)           
+  │              │                       (map (flip C.Var loc) carg_list) loc         
+  │              │     hs_expr <- runQ $ mkHsExpr ffi_name fname args                 
+  │              │                                                                    
+  │              │     hPutStrLn h $ pprint hs_expr                                   
+  │              │     return (h, [cinit|$cexpr|])                                    
+  └──────────────┘                                                                    
+  ──────────────────────────────── Speaker Notes ─────────────────────────────────    
+  Lets make one for C FFI generation. 1. Write module header, pass file handle        
+  around.                                                                             
+  2. Run language c quote and template haskell at each quoter occurrence. 3. Close    
+  file.                                                                               
+                                                                                      
+  ┌──────────────┐ ─────────────────────── Code Generation ───────────────────────    
+  │0             │                                                                    
+  │1             │ int res = @|c_hs|"build %s %s"|docDir, filen|;                     
+  │2             │                                                                    
+  │3             │ - We generate foreign exports:                                     
+  │4             │                                                                    
+  │5             │     foreign export ccall compileFile :: CString ...                
+  │6             │                                                                    
+  │7             │ - We generate marshalling:                                         
+  │8             │                                                                    
+  │9             │     compileFile freeDir fname = do                                 
+  │10            │       fname'   <- peekCString fname                                
+  │11            │       freeDir' <- peekCString freeDir                              
+  │              │       build freeDir' fname'                                        
+  │              │                                                                    
+  │              │ - The type of the exported FFI function is checked by CC           
+  │              │                                                                    
+  │              │     hs_ffi_1(docDir, filen);                                       
+  │              │                                                                    
+  └──────────────┘ - All generated as needed                                          
+  ──────────────────────────────── Speaker Notes ─────────────────────────────────    
+  Walkthrough.                                                                        
+                                                                                      
+                                                                                      
+                                                                                      
+                                                                                      
+  ┌──────────────┐ ───────────────────────── Future Work ─────────────────────────    
+  │0             │                                                                    
+  │1             │ - A objc_hs transformer                                            
+  │2             │   - Write Mac apps                                                 
+  │3             │   - Call Haskell functions                                         
+  │4             │                                                                    
+  │5             │ - language-c-edsl                                                  
+  │6             │   - inline typed FRP combinators                                   
+  │7             │   - type check and generate                                        
+  │8             │                                                                    
+  │9             │ - SQL check / compile                                              
+  │10            │ - Regex compiler                                                   
+  │11            │ - Problems Quasi Quotation is good for                             
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  └──────────────┘                                                                    
+  ──────────────────────────────── Speaker Notes ─────────────────────────────────    
+  Empty string.                                                                       
+                                                                                      
+                                                                                      
+                                                                                      
+                                                                                      
+  ┌──────────────┐ ─────────────────────────── Thanks! ───────────────────────────    
+  │0             │                                                                    
+  │1             │ Questions?                                                         
+  │2             │                                                                    
+  │3             │ twitter:         @maxpow4h                                         
+  │4             │ email:           see GitHub                                        
+  │5             │ thesis:          www.cse.unsw.edu.au/~maxs/thesis.pdf              
+  │6             │ cpppp:           github.com/maxpow4h/cpppp                         
+  │7             │ language-c-edsl: github.com/maxpow4h/language-objc-edsl            
+  │8             │                                                                    
+  │9             │                                                                    
+  │10            │                                                                    
+  │11            │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  │              │                                                                    
+  └──────────────┘                                                                    
+  ──────────────────────────────── Speaker Notes ─────────────────────────────────    
+  Questions?                                                                          
+                                                                                      
+                                                                                      
+                                                                                      
+                                                                                      
