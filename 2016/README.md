@@ -40,7 +40,6 @@ This month's meeting moved forward (again) to avoid clash with LambdaJam.
 ## E82: 23rd March
 * Ben Lippmeier: Don't substitute into abstractions.
 * Barry Jay: Programs as data structures in the λ-SF calculus.
-  * http://code.ouroborus.net/fp-syd/past/2016/2017-03-Jay-LambdaSF.pdf
 * Liam O'Connor: Practicing what you preach: Design of principled Haskell software.
 
 ## E81: 24th February
