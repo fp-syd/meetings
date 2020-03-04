@@ -22,3 +22,43 @@
 * Christine Rizkallah: The Cogent language for verified systems programming
   * http://www.cse.unsw.edu.au/~crizkallah/publications/dargent-extended-abstract.pdf
 
+## E01: February 26th
+* First evening event held at Atlassian in CBD
+* Clinton Mead - Monads in Rust
+* Rongmin Lu - Vitrea: the be-all and (co)end-all of optics?
+
+## E02: March 26th
+* Tim McGilchrist
+* ??
+
+## E03: April 22nd
+* Carlos D
+* Amos Robinson
+
+## E04: May 27th
+* Huw Campbell
+* Barry Jay
+
+## E05: June 24th
+* Alberto Vergara
+* Ben Lippmeier
+
+## E06: July 22nd
+* Clinton Mead
+* ??
+
+## E07: August 26th
+* Mark Hopkins
+* ??
+
+## E08: September 23rd
+* Andrae Muys
+* ??
+
+## E09: October 28th
+* Jost Berthold
+* ??
+
+## E10: November 25th
+* ??
+* ??
