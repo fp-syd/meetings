@@ -27,8 +27,8 @@
 * Clinton Mead - Monads in Rust
 * Rongmin Lu - Vitrea: the be-all and (co)end-all of optics?
 
-## E02: March 26th
-* Tim McGilchrist
+## ~E02: March 26th~
+* Cancelled due to Coronavirus
 * ??
 
 ## E03: April 22nd
@@ -45,7 +45,7 @@
 
 ## E06: July 22nd
 * Clinton Mead
-* ??
+* Tim McGilchrist
 
 ## E07: August 26th
 * Mark Hopkins
