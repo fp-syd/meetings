@@ -32,12 +32,12 @@
 * ??
 
 ## E03: April 22nd
-* Carlos D
-* Amos Robinson
+* Carlos D - A tiny PostgREST OCaml library leveraging Polymorphic Variants
+* Amos Robinson - Using Lustre to verify (bits of) hardware drivers
 
 ## E04: May 27th
-* Huw Campbell
-* Barry Jay
+* Huw Campbell - State Machine Testing in Hedgehog
+* Barry Jay - Abstractions as Combinations in VAR-Calculus
 
 ## E05: June 24th
 * Alberto Vergara
