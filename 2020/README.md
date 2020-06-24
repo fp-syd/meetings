@@ -41,7 +41,7 @@
 
 ## E05: June 24th
 * Alberto Vergara
-* Ben Lippmeier
+* ??
 
 ## E06: July 22nd
 * Clinton Mead
@@ -60,5 +60,5 @@
 * ??
 
 ## E10: November 25th
-* ??
+* Ben Lippmeier
 * ??
