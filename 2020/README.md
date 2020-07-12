@@ -40,8 +40,7 @@
 * Barry Jay - Abstractions as Combinations in VAR-Calculus
 
 ## E05: June 24th
-* Alberto Vergara
-* ??
+* Alberto Vergara - ReasonML + NextJS in production
 
 ## E06: July 22nd
 * Clinton Mead
