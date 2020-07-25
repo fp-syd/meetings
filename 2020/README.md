@@ -43,12 +43,12 @@
 * Alberto Vergara - ReasonML + NextJS in production
 
 ## E06: July 22nd
-* Clinton Mead
-* Tim McGilchrist
+* Clinton Mead - Dumb algorithms, smart data
+* Tim McGilchrist - 1ML Core and Modules United paper review
 
 ## E07: August 26th
-* Mark Hopkins
-* ??
+* Mark Hopkins - ???
+* Jack Kelly - constraints-extras
 
 ## E08: September 23rd
 * Andrae Muys
