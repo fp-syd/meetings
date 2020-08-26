@@ -1,0 +1,205 @@
+* Introduce DSum and our types:
+
+#+begin_src haskell
+data DSum tag f where
+  (:=>) :: tag a -> f a -> DSum tag f
+
+data Person = Person
+  { name :: String
+  , age :: Int
+  }
+
+data Dog = Dog
+  { good :: Bool
+  }
+
+data Tag a where
+  PersonTag :: Tag Person
+  DogTag :: Tag Dog
+#+end_src
+
+* Write FromJSON/ToJSON instances for DSum Tag Identity
+
+#+begin_src haskell
+instance FromJSON (DSum Tag Identity) where
+  parseJSON = withObject "DSum Tag Identity" $ \o -> do
+    String variant <- o .: "variant"
+    case variant of
+      "person" -> do
+        p <- Person <$> o .: "name" <*> o .: "age"
+        pure $ PersonTag :=> Identity p
+      "dog" -> do
+        d <- Dog <$> o .: "good"
+        pure $ DogTag :=> Identity d
+      _ -> fail "unrecognized tag"
+
+instance ToJSON (DSum Tag Identity) where
+  toJSON (tag :=> fa) = object $ ("variant" .= v) : fields
+    where
+      v :: String
+      v = case tag of
+        PersonTag -> "person"
+        DogTag -> "dog"
+      fields = case (tag, runIdentity fa) of
+        (PersonTag, Person{..}) -> [ "name" .= name, "age" .= age ]
+        (DogTag, Dog{..}) -> [ "good" .= good ]
+#+end_src
+
+* Objective
+
+- Write this generically, without having to know anything about ~tag~ or ~f~
+- Derive ~Show~, ~Generic~, ~To~/~FromJSON~ on records
+
+* Handling the key
+
+#+begin_src haskell
+showDSumKey :: forall tag f . (forall a . Show (tag a)) => DSum tag f -> String
+showDSumKey ((tag :: tag a) :=> _) = show tag
+#+end_src
+
+- Quantified constraints so we can talk about every ~a~ tag
+- ~constraints-extras~ has a workaround for older GHC
+- Values are... harder.
+
+* ArgDict class - work out what constraints we need
+
+- First need a way to hold a typeclass dictionary at the value level:
+
+#+begin_src haskell
+data Dict (c :: Constraint) where
+  Dict :: c => Dict c
+#+end_src
+
+- Then a class to track which constraints we need. If we want the
+  constraints for some value on the RHS of ~(:=>)~, the set of
+  constraints we need is constrained by the types of the ~tag~
+  constructors.
+
+#+begin_src haskell
+class ArgDict (c :: k -> Constraint) (tag :: k -> Type) where
+  type ConstraintsFor tag c :: Constraint
+  argDict :: ConstraintsFor tag c => tag a -> Dict (c a)
+#+end_src
+
+- For our ~Tag a~ type, we know that ~a~ really has two possible
+  types: ~Person~ and ~Dog~.
+
+- So for some typeclass ~c~, the constraints for ~Tag~ are ~(c Person, c Dog)~
+
+- ~argDict~ will match on ~tag~, so we know what ~a~ is, then we can
+  return the ~Dict~:
+
+#+begin_src haskell
+instance ArgDict c Tag where
+  type ConstraintsFor Tag c = (c Person, c Dog)
+  argDict = \case
+    PersonTag -> Dict
+    DogTag -> Dict
+#+end_src
+
+- There's TH in the real ~constraints-extras~ library to derive ~ArgDict~.
+
+* Better ergonomics
+
+#+begin_src haskell
+type Has (c :: k -> Constraint) tag = (ArgDict c tag, ConstraintsFor tag c)
+
+has :: forall c tag a r . Has c tag => tag a -> (c a => r) -> r
+has tag r = case argDict tag of
+  (Dict :: Dict (c a)) -> r
+#+end_src
+
+- ~has~ is set up for ~-XTypeApplications~
+
+#+begin_src haskell
+showIdentityTag :: Has Show tag => DSum tag Identity -> String
+showIdentityTag (tag :=> Identity a) = has @Show tag $ show a
+#+end_src
+
+- Gets us some of the way there, but we're still committing to a functor.
+
+* Trick: composing constraints
+
+#+begin_src haskell
+class f (g a) => ComposeC (f :: k2 -> Constraint) (g :: k1 -> k2) (a :: k1)
+instance f (g a) => ComposeC f g a
+#+end_src
+
+* Making room for the ~f~ parameter
+
+#+begin_src haskell
+type ConstraintsFor' tag (c :: k1 -> Constraint) (f :: k2 -> k1)
+  = ConstraintsFor tag (ComposeC c f)
+
+type Has' (c :: k1 -> Constraint) tag (f :: k2 -> k1)
+  = (ArgDict (ComposeC c f) tag, ConstraintsFor' tag c f)
+
+argDict' :: forall tag c f a . Has' c tag f => tag a -> Dict (c (f a))
+argDict' tag = case argDict tag of
+  (Dict :: Dict (ComposeC c f a)) -> Dict
+
+has' :: forall c f tag a r . Has' c tag f => tag a -> (c (f a) => r) -> r
+has' tag r = case argDict' tag of
+  (Dict :: Dict (c (f a))) -> r
+#+end_src
+
+* Now we can write ~Show~ instance for ~DSum~
+
+#+begin_src haskell
+instance (forall a . Show (tag a), Has' Show tag f) => Show (DSum tag f) where
+  show (tag :=> fa) = has' @Show @f tag $ show tag ++ " :=> " ++ show fa
+#+end_src
+
+* Actually parsing JSON
+
+- When we parse the tag, we get some ~Tag a~ but won't know what it
+  is. Need a wrapper to handle this:
+
+#+begin_src haskell
+data Some f where
+  Some :: f a -> Some f
+
+deriving instance (forall a . Show (f a)) => Show (Some f)
+#+end_src
+
+- Parse/encode the keys:
+
+#+begin_src haskell
+instance FromJSON (Some Tag) where
+  parseJSON = withText "Tag" $ \case
+    "person" -> pure $ Some PersonTag
+    "dog" -> pure $ Some DogTag
+    _ -> fail "unrecognized Tag"
+
+instance ToJSON (Tag a) where
+  toJSON = \case
+    PersonTag -> "person"
+    DogTag -> "dog"
+#+end_src
+
+- Parse/encode the whole object:
+
+#+begin_src haskell
+instance (FromJSON (Some tag), Has' FromJSON tag f) => FromJSON (DSum tag f) where
+  parseJSON x = flip (withObject "DSum") x $ \o -> do
+    Some (tag :: tag a) <- o .: "variant"
+    has' @FromJSON @f tag $ do
+      fa <- parseJSON x
+      pure $ tag :=> fa
+
+instance (forall a . ToJSON (tag a), Has' ToJSON tag f) => ToJSON (DSum tag f) where
+  toJSON (tag :=> fa) = has' @ToJSON @f tag $
+    let
+      Object v = object [ "variant" .= tag ]
+      Object o = toJSON fa
+    in
+      Object $ o <> v
+#+end_src
+
+* Further reading
+
+- https://github.com/obsidiansystems/constraints-extras/blob/develop/src/Data/Constraint/Extras.hs
+- https://hackage.haskell.org/package/dependent-sum
+- https://hackage.haskell.org/package/dependent-map
+- https://www.youtube.com/watch?v=olCsNGCkh_s : Dave Laing - "DMaps for delightful dynamism" aka "DMap speedrun 100% glitchless"
+- https://youtu.be/k8k2rwWImy8?t=749 : Andrew McMiddlin - "Appetite for Dysfunction" discusses DMaps for JSON APIs at the linked time (12:29)
