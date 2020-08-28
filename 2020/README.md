@@ -47,8 +47,8 @@
 * Tim McGilchrist - 1ML Core and Modules United paper review
 
 ## E07: August 26th
-* Mark Hopkins - ???
 * Jack Kelly - constraints-extras
+* Mark Hopkins - A Taste of Topos Theory
 
 ## E08: September 23rd
 * Andrae Muys
