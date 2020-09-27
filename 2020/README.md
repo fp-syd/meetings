@@ -51,12 +51,14 @@
 * Mark Hopkins - A Taste of Topos Theory
 
 ## E08: September 23rd
-* Andrae Muys
-* ??
+Pet Show episode featuring
+* John Ky - Hedgehog Testing for Cardano
+* Alexey Raga - Azure Functions in Haskell
+* Tim McGilchrist - Writing an OCaml library ocaml-github
 
 ## E09: October 28th
 * Jost Berthold
-* ??
+* Andrae Muys
 
 ## E10: November 25th
 * Ben Lippmeier
