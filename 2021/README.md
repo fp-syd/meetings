@@ -10,9 +10,9 @@
 * Jack Kelly
 * Amos Robinson
 ## E05: June
-* Huw Campbell
-## E06: July
 * Barry Jay
+## E06: July
+* Huw Campbell
 ## E07: August
 * Mark Hopkins
 ## E08: September
