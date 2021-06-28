@@ -7,7 +7,7 @@
 ## E03: April
 
 ## E04: May
-* Jack Kelly
+* Jack Kelly - Haskell and Lambda at Bellroy (wai-handler-hal)
 * Amos Robinson
 ## E05: June
 * Barry Jay
