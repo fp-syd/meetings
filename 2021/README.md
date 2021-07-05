@@ -14,8 +14,9 @@
 ## E06: July
 * Huw Campbell
 ## E07: August
-* Mark Hopkins
+* No meeting ICFP 2021 Online edition
 ## E08: September
+* Mark Hopkins
 * Justin Anderson
 ## E09: October
 * Tim M
