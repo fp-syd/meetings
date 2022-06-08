@@ -7,8 +7,8 @@ Kick off in person meetings at a new venue at 7 Bridge Street, Sydney.
 
 * Tim McGilchrist - OCaml 5.0 features for Concurrency and Parallelism.
 
-## E02 July
-* Huw Campbell - ???
+## E02 June (22nd)
+* Huw Campbell - State Machine Testing in Hedgehog
 * ???
 
 ## E03 August
