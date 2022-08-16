@@ -9,12 +9,16 @@ Kick off in person meetings at a new venue at 7 Bridge Street, Sydney.
 
 ## E02 June (22nd)
 * Huw Campbell - State Machine Testing in Hedgehog
-* ???
 
-## E03 August
-* Barry Jay - ???
-* ???
+## E03 August (17th)
+* Amos Robinson - Model checking techniques for reactive systems
+* Tim McGilchrist - Obuilder 
 
 ## E04 October
 * Jost Berthold - ???
 * Mark Hopkins - ???
+* Barry Jay - ???
+
+## E05 November
+
+## E06 December Dinner and Drinks
