@@ -1,6 +1,6 @@
 # Meetings 2022
 
-Talks given and offers of talks for 2022. Please [PR](https://github.com/fp-syd/meetings/pulls) with your slides or talk offer as appropriate. 
+Talks given and offers of talks for 2022. Please [PR](https://github.com/fp-syd/meetings/pulls) with your slides or talk offer as appropriate.
 
 ## E01 May
 Kick off in person meetings at a new venue at 7 Bridge Street, Sydney.
@@ -12,13 +12,14 @@ Kick off in person meetings at a new venue at 7 Bridge Street, Sydney.
 
 ## E03 August (17th)
 * Amos Robinson - Model checking techniques for reactive systems
-* Tim McGilchrist - Obuilder 
+* Tim McGilchrist - Obuilder
 
 ## E04 October
-* Jost Berthold - ???
-* Mark Hopkins - ???
-* Barry Jay - ???
+* Navin Keswani - Algebreaic Effects Survey([slides](2022-10-Keswani-Algebraic-Effects-Survey.pdf))
+* Jost Berthold - The K-Framework ([slides](./2022-10-jberthold-K-Framework.pdf), [example code](https://github.com/jberthold/k-examples-fp-syd/))
 
 ## E05 November
+* Mark Hopkins - ???
+* Barry Jay - ???
 
 ## E06 December Dinner and Drinks
