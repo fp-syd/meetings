@@ -19,7 +19,6 @@ Kick off in person meetings at a new venue at 7 Bridge Street, Sydney.
 * Jost Berthold - The K-Framework ([slides](./2022-10-jberthold-K-Framework.pdf), [example code](https://github.com/jberthold/k-examples-fp-syd/))
 
 ## E05 November
-* Mark Hopkins - ???
-* Barry Jay - ???
+* Barry Jay -  A Combinatory Account of Types
 
 ## E06 December Dinner and Drinks
