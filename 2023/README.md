@@ -21,6 +21,7 @@ Talks given and offers of talks for 2023. Please PR with your slides or talk off
 ## August 
 
 ## September
+ - Andre Marques Lee
 
 ## October
 
