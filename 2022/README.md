@@ -12,10 +12,10 @@ Kick off in person meetings at a new venue at 7 Bridge Street, Sydney.
 
 ## E03 August (17th)
 * Amos Robinson - Model checking techniques for reactive systems
-* Tim McGilchrist - Obuilder
+* Tim McGilchrist - OBuilder
 
 ## E04 October
-* Navin Keswani - Algebreaic Effects Survey([slides](2022-10-Keswani-Algebraic-Effects-Survey.pdf))
+* Navin Keswani - Algebraic Effects Survey([slides](2022-10-Keswani-Algebraic-Effects-Survey.pdf))
 * Jost Berthold - The K-Framework ([slides](./2022-10-jberthold-K-Framework.pdf), [example code](https://github.com/jberthold/k-examples-fp-syd/))
 
 ## E05 November
