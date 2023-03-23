@@ -6,8 +6,8 @@ Talks given and offers of talks for 2023. Please PR with your slides or talk off
  - Jost Berthold: Impressions from SPLASH 2022 (Auckland, NZ) ([slides](https://docs.google.com/presentation/d/1KaNeRKnB6SEYm8UD49m1S0pVoSdGfBmEGSiLcOjIpQU/edit?usp=sharing)
 
 ## March
+ - Tim Hunter: Formal language theory from a functional programming perspective ([slides](./2023-03-22-Hunter-Formal-Language-Theory-FP-Perspective.pdf))
  - Amos Robinson
- - Tim Hunter
 
 ## April
  - Huw Campbell 
