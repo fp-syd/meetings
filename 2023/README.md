@@ -3,18 +3,18 @@
 Talks given and offers of talks for 2023. Please PR with your slides or talk offer as appropriate.
 
 ## February
- - Jost Berthold: Impressions from SPLASH 2022 (Auckland, NZ) ([slides](https://docs.google.com/presentation/d/1KaNeRKnB6SEYm8UD49m1S0pVoSdGfBmEGSiLcOjIpQU/edit?usp=sharing)
+ - Jost Berthold: Impressions from SPLASH 2022 (Auckland, NZ) ([slides](https://docs.google.com/presentation/d/1KaNeRKnB6SEYm8UD49m1S0pVoSdGfBmEGSiLcOjIpQU/edit?usp=sharing))
 
 ## March
  - Tim Hunter: Formal language theory from a functional programming perspective ([slides](./2023-03-22-Hunter-Formal-Language-Theory-FP-Perspective.pdf))
  - Amos Robinson
 
 ## April
- - Huw Campbell 
- 
+ - Huw Campbell
+
 ## May
  - Ruben Zilibowitz
- - Tim McGilchrist 
+ - Tim McGilchrist
 
 ## June
  - Mark Hopkins
@@ -22,7 +22,7 @@ Talks given and offers of talks for 2023. Please PR with your slides or talk off
 ## July
  - Huw Campbell
 
-## August 
+## August
  - Matt Roberts
 
 ## September
@@ -32,4 +32,4 @@ Talks given and offers of talks for 2023. Please PR with your slides or talk off
  - Clinton Mead
 
 ## November
- - Tim McGilchrist 
+ - Tim McGilchrist
