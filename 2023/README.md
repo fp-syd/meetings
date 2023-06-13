@@ -33,3 +33,4 @@ Talks given and offers of talks for 2023. Please PR with your slides or talk off
 
 ## November
  - Tim McGilchrist
+ - Jonathan Merritt: The adjoint state method for ODE optimization: a nifty tool to steer your rocket
