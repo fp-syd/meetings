@@ -21,6 +21,7 @@ Talks given and offers of talks for 2023. Please PR with your slides or talk off
 
 ## July
  - Huw Campbell
+ - Eric Willigers
 
 ## August
  - Matt Roberts
