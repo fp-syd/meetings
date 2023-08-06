@@ -20,7 +20,8 @@ Talks given and offers of talks for 2023. Please PR with your slides or talk off
  - Mark Hopkins
 
 ## July
- - Huw Campbell
+ - Lightning talks (15')
+ - Stephen Sherratt: Llama - an OCaml library and declarative EDSL for software-defined audio synthesizers
 
 ## August
  - Matt Roberts
