@@ -21,7 +21,10 @@ Talks given and offers of talks for 2023. Please PR with your slides or talk off
 
 ## July
  - Lightning talks (15')
- - Stephen Sherratt: Llama - an OCaml library and declarative EDSL for software-defined audio synthesizers
+   - Eric Willigers: 'do' Unchained: Embracing Local Imperativity in a Purely Functional Language.
+   - Jost Berthold: Demo of brick, a Haskell terminal user interface (TUI) programming toolkit.
+   - Tim McGilchrist: Demo of Meio, a CLI tool for monitoring programs using Eio, Effects and OCaml.
+ - Stephen Sherratt: Llama - an OCaml library and declarative EDSL for software-defined audio synthesizers.
 
 ## August
  - Matt Roberts
