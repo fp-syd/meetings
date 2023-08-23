@@ -27,14 +27,18 @@ Talks given and offers of talks for 2023. Please PR with your slides or talk off
  - Stephen Sherratt: Llama - an OCaml library and declarative EDSL for software-defined audio synthesizers.
 
 ## August
- - Matt Roberts
- - Brad Neimann
+ - Brad Neimann: Designing a strongly typed spreadsheet
+ - Lightning talks
+   - Andrew Morris: ValueScript https://valuescript.org
+   - Trent Billington: Rust 
 
 ## September
  - Andre Marques Lee
+ - Vaibhav Sagar
 
 ## October
  - Clinton Mead
+ - Andrew Morris
 
 ## November
  - Tim McGilchrist
