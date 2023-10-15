@@ -33,12 +33,12 @@ Talks given and offers of talks for 2023. Please PR with your slides or talk off
    - Trent Billington: Rust 
 
 ## September
- - Andre Marques Lee
- - Vaibhav Sagar
+ - Vaibhav Sagar: Binary Trees to HAMTs, Step by Step
+ - Andrew Morris: ValueScript: Bringing functional superpowers to JavaScript and TypeScript.
 
 ## October
  - Clinton Mead
- - Andrew Morris
+ - Andre Marques Lee
 
 ## November
  - Tim McGilchrist
