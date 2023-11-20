@@ -30,16 +30,16 @@ Talks given and offers of talks for 2023. Please PR with your slides or talk off
  - Brad Neimann: Designing a strongly typed spreadsheet
  - Lightning talks
    - Andrew Morris: ValueScript https://valuescript.org
-   - Trent Billington: Rust 
+   - Trent Billington: Rust
 
 ## September
  - Vaibhav Sagar: Binary Trees to HAMTs, Step by Step
  - Andrew Morris: ValueScript: Bringing functional superpowers to JavaScript and TypeScript.
 
 ## October
- - Clinton Mead
- - Andre Marques Lee
+ - Andre Marques Lee: DSLs to get us out of the tarpit
+ - Lightning talks
 
 ## November
- - Tim McGilchrist
- - Jonathan Merritt: The adjoint state method for ODE optimization: a nifty tool to steer your rocket
+ - Jonathan Merritt: A brief tour of the `backprop` library in Haskell
+ - Lightning talks
