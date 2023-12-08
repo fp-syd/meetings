@@ -29,7 +29,7 @@ Talks given and offers of talks for 2023. Please PR with your slides or talk off
 ## August
  - Brad Neimann: Designing a strongly typed spreadsheet
  - Lightning talks
-   - Andrew Morris: ValueScript https://valuescript.org
+   - Andrew Morris: ValueScript https://valuescript.org ([slides](https://docs.google.com/presentation/d/13wkvMUIr1lCckQ0Iu_8ex_l27t7EgK66FG_5_EoAClE/edit?usp=sharing))
    - Trent Billington: Rust
 
 ## September
