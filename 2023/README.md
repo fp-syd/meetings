@@ -10,14 +10,14 @@ Talks given and offers of talks for 2023. Please PR with your slides or talk off
  - Amos Robinson
 
 ## April
- - Huw Campbell
+ - Huw Campbell: Domain Specific Languages with Haskell – Exploring the how and why with the Icicle language.
 
 ## May
- - Ruben Zilibowitz
- - Tim McGilchrist
+ - Ruben Zilibowitz: Game Semantics for free cartesian closed categories
+ - Tim McGilchrist: Monads for Incremental Computing
 
 ## June
- - Mark Hopkins
+ - Mark Hopkins: A monad for Set
 
 ## July
  - Lightning talks (15')
