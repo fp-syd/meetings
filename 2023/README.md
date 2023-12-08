@@ -10,14 +10,14 @@ Talks given and offers of talks for 2023. Please PR with your slides or talk off
  - Amos Robinson
 
 ## April
- - Huw Campbell
+ - Huw Campbell: Domain Specific Languages with Haskell – Exploring the how and why with the Icicle language.
 
 ## May
- - Ruben Zilibowitz
- - Tim McGilchrist
+ - Ruben Zilibowitz: Game Semantics for free cartesian closed categories
+ - Tim McGilchrist: Monads for Incremental Computing
 
 ## June
- - Mark Hopkins
+ - Mark Hopkins: A monad for Set
 
 ## July
  - Lightning talks (15')
@@ -33,13 +33,13 @@ Talks given and offers of talks for 2023. Please PR with your slides or talk off
    - Trent Billington: Rust
 
 ## September
- - Andre Marques Lee
- - Vaibhav Sagar
+ - Vaibhav Sagar: Binary Trees to HAMTs, Step by Step
+ - Andrew Morris: ValueScript: Bringing functional superpowers to JavaScript and TypeScript.
 
 ## October
- - Clinton Mead
- - Andrew Morris
+ - Andre Marques Lee: DSLs to get us out of the tarpit
+ - Lightning talks
 
 ## November
- - Tim McGilchrist
- - Jonathan Merritt: The adjoint state method for ODE optimization: a nifty tool to steer your rocket
+ - Jonathan Merritt: A brief tour of the `backprop` library in Haskell
+ - Lightning talks
