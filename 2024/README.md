@@ -3,14 +3,13 @@
 Talks given and offers of talks for 2024. Please PR with your slides or talk offer as appropriate.
 
 ## January
- - Tim McGilchrist
- - Mark Hopkins
+ - Mark Hopkins, Functional Pearl: Higher-kinded Data
 
 ## February
  - ???
 
 ## March
- - ???
+ - Tim McGilchrist
 
 ## April
  - ???
