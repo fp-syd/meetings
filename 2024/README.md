@@ -6,22 +6,22 @@ Talks given and offers of talks for 2024. Please PR with your slides or talk off
  - Mark Hopkins, Functional Pearl: Higher-kinded Data
 
 ## February
- - ???
+ - Vaibhav Sagar, 
 
 ## March
- - Tim McGilchrist
+ -  Amos Robinson
 
 ## April
- - ???
+ - Tim McGilchrist
 
 ## May
- - ???
+ - Huw Campbell
 
 ## June
- - ???
+ - Jost
 
 ## July
- - ???
+ - Brad Neimann
 
 ## August
  - ???
