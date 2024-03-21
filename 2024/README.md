@@ -6,7 +6,7 @@ Talks given and offers of talks for 2024. Please PR with your slides or talk off
  - Mark Hopkins, Functional Pearl: Higher-kinded Data
 
 ## February
- - Vaibhav Sagar, 
+ - [Vaibhav Sagar, The Real Hash Was the Friends We Made along the Way](https://vaibhavsagar.com/presentations/minimal-perfect-hashing)
 
 ## March
  -  Amos Robinson
