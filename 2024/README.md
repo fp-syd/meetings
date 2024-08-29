@@ -25,7 +25,7 @@ Talks given and offers of talks for 2024. Please PR with your slides or talk off
 
 ## August
  - Lightning talks
-   - Burin C, Closure-scripting all the things
+   - Burin C, Automate all the things with Clojure/[Babashka](https://babashka.org/). ([additional links](./closure-links-20240828.md))
    - Jonathan Merritt, Using ELM for interactive animated SVG-pictures on the web
    - Jost Berthold, [Haskell best practices - an invitation to discuss](https://docs.google.com/presentation/d/1VfJ3E_NBv0NDFqDS_csqskSXmQ3paWJyPSNrWH6UWLg/edit#slide=id.g2836b6e9e84_0_114)
    - Tim McGilchrist, Adding source links for debugging to OCaml's generated assembler code
