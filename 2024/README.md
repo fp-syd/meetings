@@ -37,4 +37,4 @@ Talks given and offers of talks for 2024. Please PR with your slides or talk off
  - ???
 
 ## November
- - ???
+ - Alex Mason, **Functional Programming as a tool of thought**, _Haskell & Clash for higher level hardware design_ [slides](./Clash%20Talk%20-%20FP-Syd%20Nov%202024%202.pdf)
