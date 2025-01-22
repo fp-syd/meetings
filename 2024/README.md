@@ -31,10 +31,11 @@ Talks given and offers of talks for 2024. Please PR with your slides or talk off
    - Tim McGilchrist, Adding source links for debugging to OCaml's generated assembler code, blogged about it here [Building OCaml from Assembly](https://lambdafoo.com/posts/2024-08-30-building-ocaml-from-assembly.html)
 
 ## September
- - ???
+ - Lightning talks
 
 ## October
- - ???
+ - Social event only (screen broken)
 
 ## November
  - Alex Mason, **Functional Programming as a tool of thought**, _Haskell & Clash for higher level hardware design_ [slides](./2024-11-27-Clash_Talk-Alex_Mason.pdf)
+ - Craig McLaughlin, **Now Serving: A Lean Beefy Prover**, about the Lean theorem prover
