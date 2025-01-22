@@ -32,6 +32,9 @@ Talks given and offers of talks for 2024. Please PR with your slides or talk off
 
 ## September
  - Lightning talks
+   - Frazer Tweedale, **Haskell Security Response Team** ([slides](https://speakerdeck.com/frasertweedale/haskell-security-response-team-haskell-ecosystem-workshop-2024))
+   - Thomas Sewell, **FP Syd: Past, present, and future**
+   - ...and other talks that nobody wrote down
 
 ## October
  - Social event only (screen broken)
