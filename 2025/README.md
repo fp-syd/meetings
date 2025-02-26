@@ -4,10 +4,9 @@ Talks given and offers of talks for 2025. Please PR with your slides or talk off
 
 ## January
 - Geoffrey Borough: On OCaml
- - ???
 
 ## February
- - ???
+- Vaibhav Sagar: SATisfying Solutions to Difficult Problems!
 
 ## March
  - ???
