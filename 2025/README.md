@@ -10,10 +10,10 @@ Talks given and offers of talks for 2025. Please PR with your slides or talk off
 
 ## March
  - Huw Campbell ???
-
-## April
  - Chris Armstrong ???
- - Burin Choomnuan ???
+   
+## April
+ - workshop month ???
 
 ## May
  - Amos Robinson ???
@@ -28,6 +28,7 @@ Talks given and offers of talks for 2025. Please PR with your slides or talk off
 
 ## August
  - Thomas Sewell ???
+ - Burin Choomnuan ???
    
 ## September
  - John Ky ???
