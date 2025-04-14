@@ -9,11 +9,10 @@ Talks given and offers of talks for 2025. Please PR with your slides or talk off
 - Vaibhav Sagar: SATisfying Solutions to Difficult Problems!
 
 ## March
- - Huw Campbell ???
- - Chris Armstrong ???
+ - Huw Campbell: Destructive Updates - a Stitch in Time
    
 ## April
- - workshop month ???
+ - Chris Armstrong: Smaws, a new AWS client library for OCaml
 
 ## May
  - Amos Robinson ???
