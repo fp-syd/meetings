@@ -15,7 +15,7 @@ Talks given and offers of talks for 2025. Please PR with your slides or talk off
  - Chris Armstrong: Smaws, a new AWS client library for OCaml
 
 ## May
- - Amos Robinson ???
+ - Thomas Sewell: Functional programs and proof tactics
 
 ## June
  - Jonathan Merritt ???
@@ -26,7 +26,7 @@ Talks given and offers of talks for 2025. Please PR with your slides or talk off
  - Damian Jurd ???
 
 ## August
- - Thomas Sewell ???
+ - Amos Robinson ???
  - Burin Choomnuan ???
    
 ## September
