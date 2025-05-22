@@ -18,7 +18,7 @@ Talks given and offers of talks for 2025. Please PR with your slides or talk off
  - Thomas Sewell: Functional programs and proof tactics
 
 ## June
- - Jonathan Merritt ???
+ - Amos Robinson ???
  - Carlos Yago ???
 
 ## July
@@ -26,7 +26,7 @@ Talks given and offers of talks for 2025. Please PR with your slides or talk off
  - Damian Jurd ???
 
 ## August
- - Amos Robinson ???
+ - Jonathan Merritt ???
  - Burin Choomnuan ???
    
 ## September
