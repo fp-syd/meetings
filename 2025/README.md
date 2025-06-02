@@ -18,7 +18,7 @@ Talks given and offers of talks for 2025. Please PR with your slides or talk off
  - Thomas Sewell: Functional programs and proof tactics
 
 ## June
- - Amos Robinson ???
+ - Amos Robinson: Fitch-style modal lambda calculi - [summary of Ranald Clouston's paper of the same name](https://arxiv.org/pdf/1710.08326)
  - Carlos Yago ???
 
 ## July
