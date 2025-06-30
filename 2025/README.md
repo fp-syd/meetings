@@ -10,7 +10,7 @@ Talks given and offers of talks for 2025. Please PR with your slides or talk off
 
 ## March
  - Huw Campbell: Destructive Updates - a Stitch in Time
-   
+
 ## April
  - Chris Armstrong: Smaws, a new AWS client library for OCaml
 
@@ -23,17 +23,16 @@ Talks given and offers of talks for 2025. Please PR with your slides or talk off
 
 ## July
  - Alex Mason ???
- - Damian Jurd ???
-
-## August
- - Jonathan Merritt ???
  - Burin Choomnuan - Clojure for Haskell & OCaml Developer
    - **You know**: Algebraic data types, pattern matching, type inference
    - **You love**: Pure functions, immutability, mathematical elegance
    - **You wonder**: "Why would I give up types for parentheses?"
    - **Today**: We'll explore what Clojure offers that might surprise you
 
-   
+## August
+ - Jonathan Merritt ???
+ - Damian Jurd ???
+
 ## September
  - Tim McGilchrist ???
 
