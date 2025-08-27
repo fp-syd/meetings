@@ -19,10 +19,8 @@ Talks given and offers of talks for 2025. Please PR with your slides or talk off
 
 ## June
  - Amos Robinson: Fitch-style modal lambda calculi - [summary of Ranald Clouston's paper of the same name](https://arxiv.org/pdf/1710.08326)
- - Carlos Yago ???
 
 ## July
- - Alex Mason ???
  - Burin Choomnuan - Clojure for Haskell & OCaml Developer
    - **You know**: Algebraic data types, pattern matching, type inference
    - **You love**: Pure functions, immutability, mathematical elegance
@@ -30,8 +28,7 @@ Talks given and offers of talks for 2025. Please PR with your slides or talk off
    - **Today**: We'll explore what Clojure offers that might surprise you
 
 ## August
- - Jonathan Merritt ???
- - Damian Jurd ???
+  - Jost Berthold: How About AI-Assisted Functional Programming? [Slides](https://docs.google.com/presentation/d/18O3TIrnC4xqPiqSFU7bTC9hhexwaCAqXdaYErtx8bKk/edit?slide=id.p#slide=id.p) [Repository](https://github.com/jberthold/vibe-coding-fp-syd/)
 
 ## September
  - Tim McGilchrist ???
@@ -41,3 +38,9 @@ Talks given and offers of talks for 2025. Please PR with your slides or talk off
 
 ## November
  - Jost Berthold ???
+
+## Rescheduled
+ - Carlos Yago ???
+ - Alex Mason ???
+ - Jonathan Merritt ???
+ - Damian Jurd ???
