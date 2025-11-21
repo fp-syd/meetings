@@ -31,13 +31,13 @@ Talks given and offers of talks for 2025. Please PR with your slides or talk off
   - Jost Berthold: How About AI-Assisted Functional Programming? [Slides](https://docs.google.com/presentation/d/18O3TIrnC4xqPiqSFU7bTC9hhexwaCAqXdaYErtx8bKk/edit?slide=id.p#slide=id.p) [Repository](https://github.com/jberthold/vibe-coding-fp-syd/)
 
 ## September
- - Tim McGilchrist ???
+ - FP Syd Social Meeting (no talk)
 
 ## October
  - Mark Hopkins ???
 
 ## November
- - Jost Berthold ???
+ - Tim McGilchrist ???
 
 ## Rescheduled
  - Carlos Yago ???
